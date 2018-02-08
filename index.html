@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Find current events happening in space">
+  <title>SkyCalendar App</title>
+
+  <!-- Responsive viewport tag, tells small screens that it's responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Normalize.css, a cross-browser reset file -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="grid.css" />
+  <link rel="stylesheet" href="index.css" />
+
+</head>
+<body>
+  <main role="main">
+    
+    <nav role="navigation" class="title"><img class="logo" src="http://melissarte.com/wp-content/uploads/2018/01/space-view.png" alt="spaceView-logo"><h1>View the party in the Sky</h1><p>Find out current and upcoming celestial events</p></nav>
+    
+    <div class="row">
+<!--LEFT SIDE-->
+      <div class="side-col">
+        
+<!--clock-->        
+        <div class="clock" id="clock"></div>
+        
+<!--weather  -->      
+        <div id="weather-value" class="weather">
+          <p>Local Weather</p>
+            <div>
+                <div>
+                     <p  id="weather-value" >-- °
+                        <a  id="convert" href="#">C</a>
+                     </p> 
+                </div>
+                <div>
+                    <canvas id="icon1" width="50" height="50"></canvas>
+                </div>
+            </div>
+            <p id="weather-description">---</p>
+      
+        </div>
+        
+<!--MOON -->       
+        <div class="moon"><p>Tonight's moon<br/>
+          <span id="day">11</span>/<span id="month">11</span>/<span id="year">11</span>
+          <canvas id="moonCanvas" width="200px" height="200px"></canvas> 
+         </p>
+        </div>
+      </div>
+
+<!--MIDDLE SECTION-->      
+<!--NASA-->
+        <div class="middle-col">
+         <!--<pre id="reqObject"></pre>-->
+         <img class="nasaSize" id="apod_img_id"/>
+         <iframe class="nasaSize" id="apod_vid_id" type="text/html"></iframe>
+         <p id="copyright"></p>
+        </div>
+
+<!--RIGHT SIDE-->
+      <div class="side-col">
+        
+<!--CALENDAR --> 
+        <div class="calendar" id="calendar">Calendar</div>
+
+<!--UPCOMING EVENTS -->        
+        <div class="event"><h4><a href="/meteor-showers/meteor-shower-calendar/#Lyrids">Lyrids</a></h4>
+            <p class="lg">on April 21-22nd night.<br/>
+            <small>The moon will be 85% of full.</small>
+            <p onclick="window.location='/meteor-showers/meteor-shower-calendar/#Lyrids'" class="lg smp">The Lyrids are a medium strength shower that usually produces good rates for three nights centered on the maximum. These meteors also usually lack persistent trains but can produce fireballs. These meteors are best seen from the northern hemisphere&hellip;</p>
+            <a href="/meteor-showers/meteor-shower-calendar/"> Meteor Shower Calendar</a>		
+        </div> <!-- 
+          <div class="tweetwidget">
+            <a class="twitter-timeline" href="https://twitter.com/amsmeteors" data-widget-id="679973688918306816">Tweets by @amsmeteors</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	        </div>-->
+      </div>
+
+      
+    </div>
+  </main>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
+
+</body>
+</html>
