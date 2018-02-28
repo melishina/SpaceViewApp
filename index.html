@@ -1,96 +1,84 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Find current events happening in space">
-  <title>SkyCalendar App</title>
+	<head>
+		<title>SkyCalendar WebApp</title>
+		<meta charset="utf-8" />
+        <meta name="description" content="Find current events happening in space">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="grid.css" />
+		<link rel="stylesheet" href="calendar.css" />
+	</head>
+	<body>
 
-  <!-- Responsive viewport tag, tells small screens that it's responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Normalize.css, a cross-browser reset file -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+		<!-- Banner -->
+			<section id="banner">
+        <img src="http://melissarte.com/wp-content/uploads/2018/01/space-view.png" class="logo">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet">
+				<h1>Welcome to Sky View</h1>
+				<p>A calendar of celestial phenomenas, listing the year's observing highlights.</p>
+			</section>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="grid.css" />
-  <link rel="stylesheet" href="index.css" />
-
-</head>
-<body>
-  <main role="main">
-    
-    <nav role="navigation" class="title"><img class="logo" src="http://melissarte.com/wp-content/uploads/2018/01/space-view.png" alt="spaceView-logo"><h1>View the party in the Sky</h1><p>Find out current and upcoming celestial events</p></nav>
-    
-    <div class="row">
-<!--LEFT SIDE-->
-      <div class="side-col">
-        
-<!--clock-->        
-        <div class="clock" id="clock"></div>
-        
-<!--weather  -->      
-        <div id="weather-value" class="weather">
-          <p>Local Weather</p>
-            <div>
-                <div>
-                     <p  id="weather-value" >-- °
-                        <a  id="convert" href="#">C</a>
-                     </p> 
-                </div>
-                <div>
-                    <canvas id="icon1" width="50" height="50"></canvas>
-                </div>
-            </div>
-            <p id="weather-description">---</p>
-      
-        </div>
-        
-<!--MOON -->       
-        <div class="moon"><p>Tonight's moon<br/>
+		<!-- One -->
+			<section id="one" class="wrapper">
+				<div class="inner">
+					<div class="flex flex-3">
+						<article>
+							<header>
+								<h3>Local Temperature</h3>
+							</header>
+							<div id="location-wrapper">
+                            <span id="city"></span>&nbsp<span id="country"></span>
+                            </div>
+                            <div>
+                            <span id="temperature"></span><span id="degreeSymbol"></span><span id="icon"></span>
+                            </div>
+                            <div id="font-size-wrapper">
+                  				<div id="conditions"></div>
+                  				<div id="winds"></div>
+                  				<div id="pressure"></div>
+                  				<div id="humidity"></div>
+                            </div> <!-- end font-size-wrapper -->
+                			<div>
+                  				<button id="unit" type="button" >Imperial Unit</button>
+                			</div>
+						</article>
+						<article>
+							<header>
+								<h3>Tonight's moon phase</h3>
+							</header>
+							<div><p>
           <span id="day">11</span>/<span id="month">11</span>/<span id="year">11</span>
           <canvas id="moonCanvas" width="200px" height="200px"></canvas> 
          </p>
         </div>
-      </div>
+						</article>
+						<article>
+							<footer>
+							  <h3 id="sunrise"></h3>
+                			  <h3 id="sunset"></h3>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
 
-<!--MIDDLE SECTION-->      
-<!--NASA-->
-        <div class="middle-col">
-         <!--<pre id="reqObject"></pre>-->
-         <img class="nasaSize" id="apod_img_id"/>
-         <iframe class="nasaSize" id="apod_vid_id" type="text/html"></iframe>
-         <p id="copyright"></p>
-        </div>
+		<!-- Two -->
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>Calendar</h2>
+					</header>
+						<div id="calendar"></div>
+			  	</div>
+			</section>
 
-<!--RIGHT SIDE-->
-      <div class="side-col">
-        
-<!--CALENDAR --> 
-        <div class="calendar" id="calendar">Calendar</div>
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+		<script src="moon.js"></script>
+    <script src="calendar.js"></script>
+    <script src="weather.js"></script>
 
-<!--UPCOMING EVENTS -->        
-        <div class="event"><h4><a href="/meteor-showers/meteor-shower-calendar/#Lyrids">Lyrids</a></h4>
-            <p class="lg">on April 21-22nd night.<br/>
-            <small>The moon will be 85% of full.</small>
-            <p onclick="window.location='/meteor-showers/meteor-shower-calendar/#Lyrids'" class="lg smp">The Lyrids are a medium strength shower that usually produces good rates for three nights centered on the maximum. These meteors also usually lack persistent trains but can produce fireballs. These meteors are best seen from the northern hemisphere&hellip;</p>
-            <a href="/meteor-showers/meteor-shower-calendar/"> Meteor Shower Calendar</a>		
-        </div> <!-- 
-          <div class="tweetwidget">
-            <a class="twitter-timeline" href="https://twitter.com/amsmeteors" data-widget-id="679973688918306816">Tweets by @amsmeteors</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	        </div>-->
-      </div>
-
-      
-    </div>
-  </main>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="index.js"></script>
-  <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
-
-</body>
+	</body>
 </html>
