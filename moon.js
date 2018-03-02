@@ -1,4 +1,3 @@
-/*Moon*/
 //gets todays date and calls on the draw function
 function initLunarPhase(){
   var $date=new Date();
@@ -92,6 +91,6 @@ function drawMoon($moonPhase){
     ctx.fillStyle=$ovalColor;
     ctx.fill();
   }
-};
+}
 
 initLunarPhase();

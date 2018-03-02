@@ -1,0 +1,54 @@
+.event-calendar {
+  font-size: 14px;
+  overflow:hidden;
+  white-space: normal;
+  margin-top:-4em;
+}
+
+.head {
+  margin-bottom: -3.2em;
+}
+
+.event-container {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+
+.detail-container {
+  display:inline-block;
+  vertical-align:top;
+  padding-top:3px;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.date {
+  font-size: 2.5em;
+}
+
+.month {
+  display:block;
+  font-size: .4em;
+  font-weight: 400;
+  margin-top:-.8em;
+  text-transform:uppercase;
+}
+
+.detail-container {
+  display:inline-block;
+  vertical-align:top;
+  padding-top:3px;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.summary {
+  text-transform:uppercase;
+  font-weight:400;
+  font-size:1.5em;
+}
+
+.desc {
+  display:block;
+  font-size:0.9em;
+}

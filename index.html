@@ -7,7 +7,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="main.css" />
 		<link rel="stylesheet" href="grid.css" />
-		<link rel="stylesheet" href="calendar.css" />
+		<link rel="stylesheet" href="events.css" />
+<link rel="stylesheet" href="weather.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	</head>
 	<body>
 
@@ -18,8 +21,22 @@
 				<h1>Welcome to Sky View</h1>
 				<p>A calendar of celestial phenomenas, listing the year's observing highlights.</p>
 			</section>
+			
+		<!-- First Section -->
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>EVENTS</h2>
+					</header>
+					<div class="event-calendar">
+					  <div class="event-list">
+					  </div>
+					</div>
+			  </div>
+			  <a href="#" id="loadmore">Load More</a>
+			</section>
 
-		<!-- One -->
+		<!-- Second Section -->
 			<section id="one" class="wrapper">
 				<div class="inner">
 					<div class="flex flex-3">
@@ -27,57 +44,31 @@
 							<header>
 								<h3>Local Temperature</h3>
 							</header>
-							<div id="location-wrapper">
-                            <span id="city"></span>&nbsp<span id="country"></span>
-                            </div>
-                            <div>
-                            <span id="temperature"></span><span id="degreeSymbol"></span><span id="icon"></span>
-                            </div>
-                            <div id="font-size-wrapper">
-                  				<div id="conditions"></div>
-                  				<div id="winds"></div>
-                  				<div id="pressure"></div>
-                  				<div id="humidity"></div>
-                            </div> <!-- end font-size-wrapper -->
-                			<div>
-                  				<button id="unit" type="button" >Imperial Unit</button>
-                			</div>
+<div class="ww-wrapper">
+  <div class="ww-row">
+    <div class="weatherCard weatherCard1"></div>
+  </div>
+</div>
 						</article>
 						<article>
 							<header>
 								<h3>Tonight's moon phase</h3>
 							</header>
-							<div><p>
+							<div>
           <span id="day">11</span>/<span id="month">11</span>/<span id="year">11</span>
+          </div><div>
           <canvas id="moonCanvas" width="200px" height="200px"></canvas> 
-         </p>
-        </div>
-						</article>
-						<article>
-							<footer>
-							  <h3 id="sunrise"></h3>
-                			  <h3 id="sunset"></h3>
-							</footer>
+            </div>
 						</article>
 					</div>
 				</div>
-			</section>
-
-		<!-- Two -->
-			<section id="two" class="wrapper style1 special">
-				<div class="inner">
-					<header>
-						<h2>Calendar</h2>
-					</header>
-						<div id="calendar"></div>
-			  	</div>
 			</section>
 
 		<!-- Scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 		<script src="moon.js"></script>
-    <script src="calendar.js"></script>
+    <script src="events.js"></script>
     <script src="weather.js"></script>
 
 	</body>

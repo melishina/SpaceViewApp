@@ -1,10 +1,4 @@
-@charset "UTF-8";
-@import url(font-awesome.min.css);
-@import "https://fonts.googleapis.com/css?family=Raleway:100,300,600";
-
-/* Reset */
-
-	html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, a, em, img, ins, kbd, q, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,table, tr, th, td, article, aside, canvas, details, header, output, section, summary, time {
+	html, body, div, h1, h2, a, em, img,article, canvas, header, section {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -13,7 +7,7 @@
 		vertical-align: baseline;
 	}
 
-	article, aside, details, header,section {
+	article, header,section {
 		display: block;
 		background:#222225;
 	}
@@ -21,25 +15,38 @@
 	body {
 		line-height: 1;
 		-webkit-text-size-adjust: none;
+		font-family: 'Raleway', sans-serif;
+	}
+	p, h3{
+
+    padding: 1em; 
+	}
+	div{
+	   display:block;
+	   text-align: center;
 	}
 
-	ol, ul {
-		list-style: none;
-	}
-
-/*	table {
-		border-collapse: collapse;
-		border-spacing: 0;
-	}*/
-	
 	.logo {
-	  float: left;
 	  width: 300px;
 	  height: auto;
 }
 
-/* Box Model */
+#loadmore {
+    margin: 5px auto;
+    padding: 8px 0;
+    width: 50%;
+    background: #5a5a5a;
+    text-align: center;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
 
+/* Box Model */
 	*, *:before, *:after {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
@@ -51,105 +58,16 @@
 	.container {
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.container.\31 25\25 {
 		width: 100%;
 		max-width: 100em;
 		min-width: 80em;
 	}
 
-	.container.\37 5\25 {
-		width: 60em;
-	}
-
-	.container.\35 0\25 {
-		width: 40em;
-	}
-
-	.container.\32 5\25 {
-		width: 20em;
-	}
-
-	.container {
-		width: 80em;
-	}
-
-	@media screen and (max-width: 1680px) {
-
-		.container.\31 25\25 {
-			width: 100%;
-			max-width: 100em;
-			min-width: 80em;
-		}
-
-		.container.\37 5\25 {
-			width: 60em;
-		}
-
-		.container.\35 0\25 {
-			width: 40em;
-		}
-
-		.container.\32 5\25 {
-			width: 20em;
-		}
-
-		.container {
-			width: 80em;
-		}
-
-	}
-
-	@media screen and (max-width: 980px) {
-
-		.container.\31 25\25 {
-			width: 100%;
-			max-width: 112.5%;
-			min-width: 90%;
-		}
-
-		.container.\37 5\25 {
-			width: 67.5%;
-		}
-
-		.container.\35 0\25 {
-			width: 45%;
-		}
-
-		.container.\32 5\25 {
-			width: 22.5%;
-		}
-
-		.container {
-			width: 90%;
-		}
-
-	}
-
 	@media screen and (max-width: 480px) {
 
-		.container.\31 25\25 {
+		.container {
 			width: 100%;
 			max-width: 112.5%;
 			min-width: 90%;
 		}
-
-		.container.\37 5\25 {
-			width: 67.5%;
-		}
-
-		.container.\35 0\25 {
-			width: 45%;
-		}
-
-		.container.\32 5\25 {
-			width: 22.5%;
-		}
-
-		.container {
-			width: 90% !important;
-		}
-
 	}
-
