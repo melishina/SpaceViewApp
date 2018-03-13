@@ -55,11 +55,11 @@ function drawMoon($moonPhase){
   var $ctx=$moonCanvas.getContext('2d');
   
   //draw half moon
-  var $radius=100;
+  var $radius=$moonCanvas.width/2;
   var $centerX=$moonCanvas.width/2;
   var $centerY=$moonCanvas.height/2;
-  var $moonFill=$ctx.createRadialGradient($centerX, $centerY, $radius, $centerX, $centerY, 90);
-  $moonFill.addColorStop(0,   'black');
+  var $moonFill=$ctx.createRadialGradient($centerX, $centerY, $radius, $centerX, $centerY, $moonCanvas.width/3);
+  $moonFill.addColorStop(0,   '#222225');
   $moonFill.addColorStop(1, 'white');
   
   $ctx.beginPath();
@@ -67,12 +67,11 @@ function drawMoon($moonPhase){
   $ctx.fillStyle=$moonFill;
   $ctx.fill();
   
-  //draw moon fill
-  var $ovalWidth=-200;
-  $ovalWidth=($moonPhase<15)?-200+$moonPhase*28.5:200-(($moonPhase-15)*28.5);
-  var $ovalColor=($ovalWidth>0)? $moonFill:'black';
+  var $ovalWidth=-$moonCanvas.width;
+  $ovalWidth=($moonPhase<15)?-$moonCanvas.width+$moonPhase*28.5:$moonCanvas.width-(($moonPhase-15)*28.5);
+  var $ovalColor=($ovalWidth>0)? $moonFill:'#222225';
   
-  drawEllipse($ctx,$centerX-$ovalWidth/2,0,$ovalWidth,200,$ovalColor);
+  drawEllipse($ctx,$centerX-$ovalWidth/2,0,$ovalWidth,$moonCanvas.width,$ovalColor);
   function drawEllipse(ctx, x, y, w, h,fill) {
     var kappa = .5522848;
         ox = (w / 2) * kappa, // control point offset horizontal

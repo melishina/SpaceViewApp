@@ -27,6 +27,9 @@ class GetWeatherAPI {
             this.getWeather(apiRequest, data);
         })
         .fail((err) => {
+          
+            $(".weatherCard1").html("<p>Error</p>")
+          
             console.log(err);
         });
     }
@@ -40,6 +43,14 @@ class GetWeatherAPI {
             console.log(`TextStatus: ${textStatus}`);
         });
     }
+    
+    onFail(){
+      retries : 3;
+      if( getUserLocation.retries-- > 0 )
+      setTimeout(function(){
+        $.getJSON.fail(onFail);
+    }, 1000);
+}
     
     // Returns next 3 days for forecast.
     returnNextDays(n) {
@@ -79,14 +90,13 @@ class GetWeatherAPI {
 
         // Append the html to the page with the data
         $('.ww-wrapper .'+this.targetEl).append(html);
-
-        // Grab the next 3 days and loop through each with the days top temperature.
-        // generate forecast sections and loop through the data for each day
+    
+    // generate forecast sections and loop through the data for each day
         const nextDays = this.returnNextDays(3);
         let forecast = nextDays.map((nextDay, i) => { 
               return `<div class="forecastCard"><u><p>${nextDay}</p></u>
-                  <p class="forecastMax">Max ${data.list[i+1].main.temp_max.toFixed(0)}°</p>
-                  <p class="forecastMin">Min ${data.list[i+1].main.temp_min.toFixed(0)}°</p></div>`
+                  <p class="forecastMax">Max ${data.list[i+1].main.temp_max.toFixed(0)}°C</p>
+                  <p class="forecastMin">Min ${data.list[i+1].main.temp_min.toFixed(0)}°C</p></div>`
           }).join('');
         $('.'+this.targetEl+' .weatherForecast').append(forecast);
 

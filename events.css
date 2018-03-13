@@ -13,6 +13,9 @@
   padding-top: 40px;
   padding-bottom: 15px;
 }
+.event-container:nth-child(odd){
+  clear: both;
+}
 
 .detail-container {
   display:inline-block;
@@ -40,6 +43,7 @@
   padding-top:3px;
   padding-left: 13px;
   padding-right: 13px;
+  text-align: left;
 }
 
 .summary {
@@ -51,4 +55,11 @@
 .desc {
   display:block;
   font-size:0.9em;
+}
+
+@media only screen and (min-width: 500px) {
+  .event-container {
+    position: relative;
+    width: 50%;
+    float: left;  }
 }

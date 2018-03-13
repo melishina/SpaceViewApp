@@ -1,212 +1,176 @@
-/* Grid */
+.row {
+	border-bottom: solid 1px transparent;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+}
 
-	.row {
-		border-bottom: solid 1px transparent;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		float: left;
-	}
-
-	.row:after, .row:before {
-		content: '';
-		display: block;
-		clear: both;
-		height: 0;
-	}
+.row:after, .row:before {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+}
 
 /* Basic */
+body {
+	-ms-overflow-style: scrollbar;
+}
 
-	body {
-		-ms-overflow-style: scrollbar;
+@media screen and (max-width: 480px) {
+	html, body {
+		min-width: 320px;
 	}
-
-	@media screen and (max-width: 480px) {
-
-		html, body {
-			min-width: 320px;
-		}
-
-	}
+}
 
 /* Type */
+body {
+	color: #9a9a9a;
+	font-family: "Raleway", Arial, Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: 300;
+	line-height: 1.65;
+}
 
-	body {
-		color: #9a9a9a;
-		font-family: "Raleway", Arial, Helvetica, sans-serif;
-		font-size: 13pt;
-		font-weight: 300;
-		line-height: 1.65;
+@media screen and (max-width: 480px) {
+	body, input, select, textarea {
+		font-size: 12pt;
 	}
+}
 
+p {
+	margin: 0 0 2em 0;
+}
 
-		@media screen and (max-width: 480px) {
+h1, h2, h3, h4, h5, h6 {
+	color: #bb6b95;
+	font-weight: 300;
+	line-height: 1.5;
+	margin: 0 0 1em 0;
+}
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
+.inner {
+	max-width: 75em;
+	margin: 0 auto;
+}
 
-		}
-
-	a {
-		color: #5385c1;
-		text-decoration: underline;
-	}
-
-		a:hover {
-			text-decoration: none;
-		}
-
-	p {
-		margin: 0 0 2em 0;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		color: #bb6b95;
-		font-weight: 300;
-		line-height: 1.5;
-		margin: 0 0 1em 0;
-	}
-
+@media screen and (max-width: 480px) {
 	.inner {
-		max-width: 75em;
-		margin: 0 auto;
+		max-width: 85%;
 	}
-
-		@media screen and (max-width: 480px) {
-
-			.inner {
-				max-width: 85%;
-			}
-
-		}
+}
 
 /* Section/Article */
+section, article {
+	text-align: center;
+}
 
-	section.special, article.special {
-		text-align: center;
-	}
+section.wrapper, article.wrapper {
+	padding: 6em 0;
+}
 
-	section.wrapper, article.wrapper {
-		padding: 6em 0;
-	}
+section.wrapper header h2, article.wrapper header h2 {
+	font-size: 2.75em;
+	margin: 0 0 .5em 0;
+}
 
-			section.wrapper header h2, article.wrapper header h2 {
-				font-size: 2.75em;
-				margin: 0 0 .5em 0;
-			}
+section.wrapper header p, article.wrapper header p {
+	font-size: 1em;
+}
 
-			section.wrapper header p, article.wrapper header p {
-				font-size: 1em;
-			}
+section.wrapper.style1, article.wrapper.style1 {
+	background: #91446e;
+	color: #bacee6;
+}
 
-		section.wrapper.style1, article.wrapper.style1 {
-			background: #91446e;
-			color: #bacee6;
-		}
+section.wrapper.style1 header p, article.wrapper.style1 header p {
+	color: #bacee6;
+}
 
-			section.wrapper.style1 header h2, article.wrapper.style1 header h2 {
-				color: #fff;
-			}
-
-			section.wrapper.style1 header p, article.wrapper.style1 header p {
-				color: #bacee6;
-			}
-
-	header p {
-		color: #bbb;
-		position: relative;
-		margin: 0 0 1.5em 0;
-	}
+header p {
+	color: #bbb;
+	position: relative;
+	margin: 0 0 1.5em 0;
+}
 
 /* Flex */
+.flex {
+	display: -ms-flexbox;
+	-ms-flex-wrap: wrap;
+	-ms-flex-pack: justify;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
 
-	.flex {
-		display: -ms-flexbox;
-		-ms-flex-wrap: wrap;
-		-ms-flex-pack: justify;
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
+.flex.flex-3 article {
+	position: relative;
+	width: 50%;
+}
+
+@media screen and (max-width: 480px) {
+	.flex.flex-3 {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
 	}
-
-		.flex.flex-3 article {
-			position: relative;
-			width: 50%;
-		}
-
-		@media screen and (max-width: 480px) {
-
-			.flex.flex-3 {
-				-moz-flex-direction: column;
-				-webkit-flex-direction: column;
-				-ms-flex-direction: column;
-				flex-direction: column;
-			}
-
-				.flex.flex-3 article {
-					width: 100%;
-					padding-bottom: 2.5em;
-					margin-bottom: 3em;
-				}
-
-					.flex.flex-3 article:before {
-						display: none;
-					}
-
-		}
-
-
-	@media screen and (max-width: 480px) {
-
-		#header {
-			top: 1em;
-			min-width: 320px;
-		}
-
+	.flex.flex-3 article {
+		width: 100%;
+		padding-bottom: 2.5em;
+		margin-bottom: 3em;
 	}
+	.flex.flex-3 article:before {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#header {
+		top: 1em;
+		min-width: 320px;
+	}
+}
 
 /* Banner */
+#banner {
+	padding: 12em 0 10em 0;
+	background-image: url('http://melissarte.com/wp-content/uploads/2018/02/banner.jpg');
+	background-size: cover;
+	background-position: top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	text-align: center;
+  border-top: 0.5em solid #5385c1;
+}
 
+#banner h1 {
+	font-size: 3.5em;
+	font-weight: 100;
+	color: #fff;
+	line-height: 1em;
+	margin: 0 0 0.5em 0;
+	padding: 0;
+}
+
+#banner p {
+	font-size: 1em;
+	color: #fff;
+	margin-bottom: 1.75em;
+}
+
+@media screen and (max-width: 480px) {
 	#banner {
-		padding: 12em 0 10em 0;
-		background-image: url('http://melissarte.com/wp-content/uploads/2018/02/banner.jpg');
-		background-size: cover;
-		background-position: top;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		text-align: center;
-		border-top: 0.5em solid #5385c1;
+		padding: 6em 1.5em 4em 1.5em;
 	}
-
-		#banner h1 {
-			font-size: 3.5em;
-			font-weight: 100;
-			color: #fff;
-			line-height: 1em;
-			margin: 0 0 0.5em 0;
-			padding: 0;
-		}
-
-		#banner p {
-			font-size: 1em;
-			color: rgba(255, 255, 255, 0.55);
-			margin-bottom: 1.75em;
-		}
-
-		@media screen and (max-width: 480px) {
-
-			#banner {
-				padding: 6em 1.5em 4em 1.5em;
-			}
-
-		}
+}

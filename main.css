@@ -1,73 +1,78 @@
-	html, body, div, h1, h2, a, em, img,article, canvas, header, section {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
-	}
+html, body, div, h1, h2, em, img,article, canvas, header, section {
+	margin: 0;
+	padding: 0;
+  border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
-	article, header,section {
-		display: block;
-		background:#222225;
-	}
+.hidden {
+  display: none;
+}
 
-	body {
-		line-height: 1;
-		-webkit-text-size-adjust: none;
-		font-family: 'Raleway', sans-serif;
-	}
-	p, h3{
+article, header,section {
+	display: block;
+	background:#222225;
+}
 
-    padding: 1em; 
-	}
-	div{
-	   display:block;
-	   text-align: center;
-	}
+body {
+	line-height: 1;
+	-webkit-text-size-adjust: none;
+	font-family: 'Raleway', sans-serif;
+}
 
-	.logo {
-	  width: 300px;
-	  height: auto;
+p, h3{
+  padding: 1em; 
+}
+
+div{
+  display:block;
+	text-align: center;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
 }
 
 #loadmore {
-    margin: 5px auto;
-    padding: 8px 0;
-    width: 50%;
-    background: #5a5a5a;
-    text-align: center;
-    color: #fff;
-    display: block;
-    text-decoration: none;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  margin: 5px auto;
+  padding: 8px 0;
+  width: 50%;
+  background: #5a5a5a;
+  text-align: center;
+  color: white;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-/* Box Model */
-	*, *:before, *:after {
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
+a {
+  color: white;
+  cursor: pointer;
+}
+
+a:focus {
+  border: 2px solid black;
+}
 
 /* Containers */
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 100em;
+	min-width: 80em;
+}
 
+@media screen and (max-width: 480px) {
 	.container {
-		margin-left: auto;
-		margin-right: auto;
 		width: 100%;
-		max-width: 100em;
-		min-width: 80em;
-	}
-
-	@media screen and (max-width: 480px) {
-
-		.container {
-			width: 100%;
-			max-width: 112.5%;
-			min-width: 90%;
-		}
-	}
+		max-width: 112.5%;
+		min-width: 90%;
+  }
+}

@@ -1,75 +1,79 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>SkyCalendar WebApp</title>
 		<meta charset="utf-8" />
-        <meta name="description" content="Find current events happening in space">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="main.css" />
-		<link rel="stylesheet" href="grid.css" />
-		<link rel="stylesheet" href="events.css" />
-<link rel="stylesheet" href="weather.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<meta name="description" content="Find current events happening in space">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Space View</title>
+<!-- Responsive viewport tag, tells small screens that it's responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Normalize.css, a cross-browser reset file -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+	  <link rel="stylesheet" href="main.css" />
+	  <link rel="stylesheet" href="grid.css" />
+	  <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href="weather.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	</head>
 	<body>
 
-		<!-- Banner -->
-			<section id="banner">
-        <img src="http://melissarte.com/wp-content/uploads/2018/01/space-view.png" class="logo">
-
-				<h1>Welcome to Sky View</h1>
-				<p>A calendar of celestial phenomenas, listing the year's observing highlights.</p>
-			</section>
+<!-- Banner -->
+		<section id="banner" role="main">
+      <img src="http://melissarte.com/wp-content/uploads/2018/01/space-view.png" class="logo" alt="space view logo">
+      <h1>Welcome to Space View</h1>
+			<p>A calendar of celestial phenomena, listing the year's observing highlights.</p>
+		</section>
 			
-		<!-- First Section -->
-			<section id="two" class="wrapper style1 special">
-				<div class="inner">
-					<header>
-						<h2>EVENTS</h2>
-					</header>
-					<div class="event-calendar">
-					  <div class="event-list">
-					  </div>
-					</div>
-			  </div>
-			  <a href="#" id="loadmore">Load More</a>
-			</section>
-
-		<!-- Second Section -->
-			<section id="one" class="wrapper">
-				<div class="inner">
-					<div class="flex flex-3">
-						<article>
-							<header>
-								<h3>Local Temperature</h3>
-							</header>
-<div class="ww-wrapper">
-  <div class="ww-row">
-    <div class="weatherCard weatherCard1"></div>
-  </div>
-</div>
-						</article>
-						<article>
-							<header>
-								<h3>Tonight's moon phase</h3>
-							</header>
-							<div>
-          <span id="day">11</span>/<span id="month">11</span>/<span id="year">11</span>
-          </div><div>
-          <canvas id="moonCanvas" width="200px" height="200px"></canvas> 
-            </div>
-						</article>
-					</div>
+<!-- First Section -->
+		<section class="wrapper style1">
+			<div class="inner">
+				<header>
+				  <h2 id="events">EVENTS</h2>
+				</header>
+				<div class="event-calendar">
+				  <div class="event-list"></div>
 				</div>
-			</section>
+			</div>
+			<a href="#" id="loadmore">Load More</a><br>
+			<a href='#events'> Go to TOP</a>
+		</section>
 
-		<!-- Scripts -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
-		<script src="moon.js"></script>
-    <script src="events.js"></script>
-    <script src="weather.js"></script>
+<!-- Second Section -->
+		<section class="wrapper">
+			<div class="inner">
+				<div class="flex flex-3">
+					
+					<article>
+						<header>
+							<h3>Local Temperature</h3>
+						</header>
+						<div class="ww-wrapper">
+						  <div class="ww-row"></div>
+						  <div class="weatherCard weatherCard1"></div>
+						</div>
+					</article>
+						
+					<article>
+						<header>
+							<h3>Tonight's moon phase</h3>
+						</header>
+						<div>
+						  <span id="day">11</span>/<span id="month">11</span>/<span id="year">11</span>
+            </div>
+            <div><canvas id="moonCanvas" width="150px" height="150px"></canvas> 
+            </div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+<!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+	<script src="moon.js"></script>
+  <script src="events.js"></script>
+  <script src="weather.js"></script>
 
 	</body>
 </html>
