@@ -19,14 +19,14 @@ function eventHTML(event){
   let desc = event.description;
   let summary = event.summary;
   
-  return `<div class="event-container">
+  return `<li class="event-container" aria-live="assertive" hidden>
           <span class="date-container">
           <span class="date">${date}<span class="month">${monthNames[month]}</span></span></span>
           <span class="detail-container">
           <span class="summary">${summary}</span>
           <span class="desc">${desc}</span>
           </span>
-          </div>`;
+          </li>`;
 }
 
 var currentMonth = 2;
@@ -36,6 +36,8 @@ function addEventToList(event){
   let HTML = eventHTML(event);
   document.querySelector('.event-list')
   .insertAdjacentHTML( 'beforeend', eventHTML(event) );  
+  
+  document.querySelector('.event-list').lastChild.hidden = false;
 }
 
 function addNextTwoEvents(event1, event2){
@@ -103,7 +105,15 @@ function makeRequest() {
 makeRequest();
 
 function statusError (){
-  $(".event-list").html('<div class="event-container"><p>Error API</p></div>');
+  let retries = 3;
+  if (retries > 0) {
+		console.log('trying to load events #', retries);
+		retries--;
+		setTimeout(statusError, 2000);
+  } 
+  if (status == 'timeout') {
+		$(".event-list").html('<div class="event-container"><p>Error API, try again</p></div>');
+  }
 }
 
 /*LOAD MORE*/
