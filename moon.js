@@ -19,7 +19,7 @@ function initLunarPhase() {
 
 //function that calculates the moon phase given a certain day
 function moonPhase(year, month, day) {
-	n = Math.floor(12.37 * (year - 1900 + (1.0 * month - 0.5) / 12.0));
+	n = Math.floor(12.37 * (year - 2020 + (1.0 * month - 0.5) / 12.0));
 	RAD = 3.14159265 / 180.0;
 	t = n / 1236.85;
 	t2 = t * t;
